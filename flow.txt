@@ -1,0 +1,11 @@
+Project flow
+plc ----> IoT2040/RPI ----> Mindsphere IoT -----> Mendix/custom dashboard
+	|										|
+	|										|
+	|										|
+	NodeRed									Rest apis
+
+Features 
+1. Elevator system state() data logging to mindsphere
+2. Cloud based digital twin of the elevator based on mindsphere data
+3. 

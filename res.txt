@@ -1,0 +1,4 @@
+https://documentation.mindsphere.io/resources/html/getting-connected/en-US/index.html
+
+profinet vs profibus : https://realpars.com/difference-between-profibus-and-profinet/
+
