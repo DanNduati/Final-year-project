@@ -1,2 +1,2 @@
-# Development of a MindSphere industrial IoT application; Case study: Elevator
-
+# Development of a MindSphere industrial IoT application
+# Case study: Elevator
