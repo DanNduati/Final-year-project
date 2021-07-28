@@ -15,5 +15,5 @@
 - This method requires the MindConnect IoT Extension which is a paid extension (69$/month) thus this was also scrapped off
 
 3. Method 3 - mindconnect libraries - (c and nodejs)
-- This method has no public documentation
-- The libraries are however opensource : [C](https://support.industry.siemens.com/cs/document/109755348/mindconnect-library-3-1-for-mindsphere-3-0-?dti=0&lc=en-WW) and [NodeJs](https://github.com/mindsphere/mindconnect-nodejs)
+- [Documentation](https://developer.mindsphere.io/resources/mindconnect-lib/resources-mclib-overview.html)
+- The libraries are: [C](https://support.industry.siemens.com/cs/document/109755348/mindconnect-library-3-1-for-mindsphere-3-0-?dti=0&lc=en-WW) and [NodeJs](https://github.com/mindsphere/mindconnect-nodejs)
