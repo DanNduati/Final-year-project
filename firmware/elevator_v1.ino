@@ -3,7 +3,12 @@
 #include <Arduino_JSON.h>
 #include "addons/TokenHelper.h"
 #include "addons/RTDBHelper.h"
+#include "DHT.h"
 
+//dht11
+#define DHTPIN 26
+#define DHTTYPE DHT11
+DHT dht(DHTPIN, DHTTYPE);
 //wifi creds
 const char* ssid  = "warazi";
 const char* password = "warazi@123";
@@ -17,6 +22,8 @@ FirebaseConfig config;
 String database_path = "";
 String fuid = "";
 bool isAuthenticated = false;
+const int num_sensors = 5;
+String payload_names[num_sensors] = {"Distance", "Temperature", "Humidity","lmsw1","lmsw2"};
 
 //distance sensor
 const int trigPin = 5;
@@ -25,16 +32,18 @@ const int echoPin = 18;
 #define SOUND_SPEED 0.034
 long duration;
 float distanceCm;
+
 //limit switches
 const int switch_num = 2;
 const int floor_switches[switch_num] = {32, 33};
 
 //firebase send interval
 long lastSendTime = 0;
-int interval = 500;
+int interval = 100;
 
 void setup() {
   Serial.begin(115200);
+  dht.begin();
   wifiInit();
   firebaseInit();
   pinInit();
@@ -44,8 +53,22 @@ void loop() {
   if (millis() - lastSendTime > interval)
   {
     float distance = get_distance();
-    sendToFirebase(distance);
-    Serial.print("Distance (cm): ");
+    float h = dht.readHumidity();
+    float t = dht.readTemperature();
+    int sw1 = digitalRead(floor_switches[0]);
+    int sw2 = digitalRead(floor_switches[1]);
+    //package the sensor data
+    float sensor_data[num_sensors] = {distance, t, h, float(sw1),float(sw2)};
+    sendToFirebase(sensor_data);
+    Serial.print("Switch 1: ");
+    Serial.print(sw1);
+    Serial.print(" Switch 2: ");
+    Serial.print(sw2);
+    Serial.print(F("  Humidity: "));
+    Serial.print(h);
+    Serial.print(F("%  Temperature: "));
+    Serial.print(t);
+    Serial.print(" Distance (cm): ");
     Serial.println(distance);
     lastSendTime = millis();
   }
@@ -55,7 +78,7 @@ void pinInit() {
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
   for (int i = 0; i < switch_num; i++) {
-    pinMode(INPUT, floor_switches[i]);
+    pinMode(floor_switches[i],INPUT);
   }
 }
 
@@ -108,31 +131,32 @@ float get_distance() {
   return distanceCm;
 }
 
-void sendToFirebase(float distance) {
+void sendToFirebase(float payload[3]) {
   Serial.println("------------------------------------");
   Serial.println("Sending Sensor data to firebase");
   String root_node = database_path;
-  String sensor_node = root_node + "/" + "Distance";
-  String node = sensor_node + "/value";
-  float dist = distance;
-  if (Firebase.set(fbdo, node.c_str(), dist))
-  {
-    // Print firebase server response
-    Serial.println("PASSED");
-    Serial.println("PATH: " + fbdo.dataPath());
-    Serial.println("TYPE: " + fbdo.dataType());
-    Serial.println("ETag: " + fbdo.ETag());
-    Serial.print("VALUE: ");
-    printResult(fbdo); //see addons/RTDBHelper.h
-    Serial.println("------------------------------------");
-    Serial.println();
-  }
-  else
-  {
-    Serial.println("FAILED");
-    Serial.println("REASON: " + fbdo.errorReason());
-    Serial.println("------------------------------------");
-    Serial.println();
+  for (int i = 0; i < num_sensors; i++) {
+    String sensor_node = root_node + "/" + payload_names[i];
+    String node = sensor_node + "/value";
+    float s_data = payload[i];
+    if (Firebase.set(fbdo, node.c_str(), s_data))
+    {
+      // Print firebase server response
+      Serial.println("PASSED");
+      Serial.println("PATH: " + fbdo.dataPath());
+      Serial.println("TYPE: " + fbdo.dataType());
+      Serial.println("ETag: " + fbdo.ETag());
+      Serial.print("VALUE: ");
+      printResult(fbdo); //see addons/RTDBHelper.h
+      Serial.println("------------------------------------");
+      Serial.println();
+    }
+    else
+    {
+      Serial.println("FAILED");
+      Serial.println("REASON: " + fbdo.errorReason());
+      Serial.println("------------------------------------");
+      Serial.println();
+    }
   }
 }
-
