@@ -1,4 +1,4 @@
-# Final Year Project: Development of a MindSphere industrial IoT application
+# Final Year Project: Development of a industrial IoT application with web based digital twin
 # Case study: Elevator
 ### This is a repository containing the documentation and files of the design,implementation and testing of the system by group 22
 
