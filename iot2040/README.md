@@ -47,12 +47,14 @@ In my case this is:
 sudo dd bs=1M if=RT_Image_V2.4.0_RC2.wic of=/dev/sdb
 ```
 <img src="images/burn_image.png"></img>
+
 This takes `some time`
 
 ---
 
 ## Filesysystem resizing
 Prior to inserting the Micro SD card into the IoT 2040, it’s worth expanding the root file system to fill the card. I use `gparted` with the card inserted into my laptop.
+
 <img src="images/fs_resizing.png"></img>
 <img src="images/fs_resizing_2.png"></img>
 <img src="images/fs_output.png"></img>
