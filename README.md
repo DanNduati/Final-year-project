@@ -1,6 +1,6 @@
 # Final Year Project: Development of a industrial IoT application with web based digital twin
 # Case study: Elevator
-### This is a repository containing the documentation and files of the design,implementation and testing of the system by group 22
+This is a repository containing the documentation and files of the design,implementation and testing of the system by group 22
 
 # Group Members
 1. Mwangi Maxwell Wachira
