@@ -2,7 +2,7 @@
 <h1><center>Case study: Elevator </center></h1>
 
 ## Project Description
-### This is a repository containing the documentation and files of the design,implementation and testing of the IIoT system by group 22. IIoT is one of the industry 4.0 technology. Our project is about connecting industrial devices to the cloud using Google cloud platform where we use the Firebase Realtime Database a cloud-hosted database to store elevator data as JSON and synchronized in Realtime to every connected client. Using Database trigger event handlers we handle on-change events of the data in the database and control and simulate floor changes on  a digital twin model of the elevator running on the web. The web based digital twin components were obtained from the data generated from the cad design. A real time cloud based digital twin will be developed
+This is a repository containing the documentation and files of the design,implementation and testing of the IIoT system by group 22. IIoT is one of the industry 4.0 technology. Our project is about connecting industrial devices to the cloud using Google cloud platform where we use the Firebase Realtime Database a cloud-hosted database to store elevator data as JSON and synchronized in Realtime to every connected client. Using Database trigger event handlers we handle on-change events of the data in the database and control and simulate floor changes on  a digital twin model of the elevator running on the web. The web based digital twin components were obtained from the data generated from the cad design. A real time cloud based digital twin will be developed
 
 # Preview
 <p align="center">
