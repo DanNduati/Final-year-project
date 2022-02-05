@@ -13,10 +13,12 @@ This is a repository containing the documentation and files of the design,implem
 </p>
 
 # Table of contents
-* [GroupMembers](#Group-Members)
-* [DirectoryStructure](#directory-structure)
-* [ProjectObjectives](#Project-Objectives)
-* [SystemArchitecture](#Group-Members)
+* [Group Members](#Group-Members)
+* [Directory Structure](#Directory-Structure)
+* [Project Objectives](#Project-Objectives)
+* [System Architecture](#System-Architecture)
+* [Project Status](#Status)
+* [License](#License)
 
 # Group-Members
 1. Nduati Daniel Chege
@@ -24,7 +26,7 @@ This is a repository containing the documentation and files of the design,implem
 3. Ian Wanjir Owuor 
 4. Amos Mosoito Mutete 
 
-# DirectoryStructure
+# Directory-Structure
     .
     ├── Budget			    # Project budget
     ├── docs			    # Project documentation and reference material
@@ -45,7 +47,7 @@ This is a repository containing the documentation and files of the design,implem
 3. Integrating the Individual systems so that they function together seamlessly.
 4. Collect, monitor and visualize the system data real time on a cloud IOT platform.
 
-# System architecture
+# System-Architecture
 
 # Status
 [Progress Board](https://github.com/DanNduati/Final-Year-Project/projects/1)
