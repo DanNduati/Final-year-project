@@ -46,6 +46,6 @@ This is a repository containing the documentation and files of the design,implem
 # System architecture
 
 # Status
-
+[Progress Board](https://github.com/DanNduati/Final-Year-Project/projects/1)
 # License
-This project is licensed under the terms of the MIT license.
+This project is licensed under the terms of the [MIT license](LICENSE).
