@@ -1,5 +1,7 @@
-# Final Year Project: Development of a industrial IoT application with web based digital twin
-<h1><center>Case study: Elevator </center></h1>
+<p align="center"><b><h1> Final Year Project: Development of a industrial IoT application with web based digital twin
+</h1></b></p>
+
+<p align="center"><h1>Case study: Elevator </h1></p>
 
 ## Project Description
 This is a repository containing the documentation and files of the design,implementation and testing of the IIoT system by group 22. IIoT is one of the industry 4.0 technology. Our project is about connecting industrial devices to the cloud in this case we fimlly went for Google cloud platform where we use the Firebase Realtime Database a cloud-hosted database to store elevator data as JSON and synchronized in Realtime to every connected client. Using Database trigger event handlers we handle on-change events of the data in the database and control and simulate floor changes on a web hosted digital twin model of the elevator.
