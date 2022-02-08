@@ -37,7 +37,7 @@ This is a repository containing the documentation and files of the design,implem
     ├── iot2040		    	# IoT2040 commisioning documentation
     ├── onboarding			# Mindsphere rpi onboarding documentation
     ├── res     			# welp
-    ├── threejs 			# Elevator threejs boilerplate
+    ├── threejs 			# Elevator threejs basic boilerplate
     ├── twin     			# Elevator threejs webpack boilerplate 
 	└── README.md
 
@@ -51,5 +51,6 @@ This is a repository containing the documentation and files of the design,implem
 
 # Status
 [Progress Board](https://github.com/DanNduati/Final-Year-Project/projects/1)
+
 # License
 This project is licensed under the terms of the [MIT license](LICENSE).
