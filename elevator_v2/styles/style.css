@@ -1,0 +1,22 @@
+body{
+    font-family: 'Nunito', sans-serif;
+}
+.divCover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divCover img{
+    width: 70%;
+}
+a{
+    text-decoration: none !important;
+}
+#userFullNameError, #userQualificationError, #userLocationError, #userEmailError, #userPasswordError, #userSIEmailError, #userSIPasswordError, #userBioError, #editProfileForm{
+    display: none;
+}
+
+#userAvatar{
+    width: 120px;
+    height: 120px;
+}
